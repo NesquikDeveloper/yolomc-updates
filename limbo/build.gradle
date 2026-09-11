@@ -4,7 +4,7 @@ plugins {
     id 'net.minecrell.plugin-yml.bukkit' version '0.6.0'
 }
 
-group 'com.minecraft.thebridge'
+group 'com.minecraft.limbo'
 version '1.5.7-SNAPSHOT'
 
 compileJava.options.encoding = 'UTF-8'
@@ -17,13 +17,15 @@ repositories {
 dependencies {
     compile project(':core-bukkit')
 
-    compileOnly 'org.projectlombok:lombok:1.18.8'
-    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
     compileOnly group: 'redis.clients', name: 'jedis', version: '3.1.0'
 
-    compileOnly files("C:\\Libraries\\bukkit-server.jar")
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compileOnly name: 'bukkit-server'
+    compileOnly name: 'ViaVersion'
+    compileOnly fileTree(dir: "${rootDir}/libs", include: ['*.jar'])
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
 
 jar {
@@ -31,11 +33,11 @@ jar {
 }
 
 bukkit {
-    name = 'Arcade'
-    main = 'com.minecraft.thebridge.TheBridge'
+    name = 'Limbo'
+    main = 'com.minecraft.limbo.Limbo'
     version = '1.5.7-' + gitVersion()
     website = 'www.ateumc.com'
-    description = 'Arcade bukkit plugin based on core and core-bukkit.'
+    description = 'Limbo Bukkit Plugin [core, core-bukkit, core-proxy]'
 }
 
 static String gitVersion() {

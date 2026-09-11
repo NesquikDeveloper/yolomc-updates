@@ -27,8 +27,8 @@ import java.util.UUID;
 public class GeneratorListener implements Listener {
 
     private static final int maxGeneration = 410;
-    private static final File saveDirectory = new File(File.separatorChar == '\\' ? "C:\\Generator\\Maps" : System.getProperty("user.home") + File.separator + "misc" + File.separator + "hg" + File.separator + "maps");
-    private static final File worldBorderDirectory = new File(File.separatorChar == '\\' ? "C:\\Generator\\Border" : System.getProperty("user.home") + File.separator + "misc" + File.separator + "hg" + File.separator + "structures" + File.separator + "border");
+    private static final File saveDirectory = Constants.HG_MAPS_DIRECTORY;
+    private static final File worldBorderDirectory = new File(Constants.HG_STRUCTURES_DIRECTORY, "border");
 
     @org.bukkit.event.EventHandler(priority = EventPriority.LOWEST)
     public void onWorldInit(WorldInitEvent event) {

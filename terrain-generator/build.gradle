@@ -19,10 +19,12 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
-    String dir = "C:\\Libraries\\"
+    compileOnly project(':core')
 
-    compileOnly files(dir + "bukkit-server.jar")
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compileOnly name: 'bukkit-server'
+    compileOnly name: 'ViaVersion'
+    compileOnly fileTree(dir: "${rootDir}/libs", include: ['*.jar'])
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
 
 jar {
@@ -37,7 +39,7 @@ bukkit {
     author = 'NesquikDeveloper'
     depend = ['TerrainControl']
     load = 'STARTUP'
-    description = 'Terrain Generator bukkit plugin based on Open Terrain Generator'
+    description = 'TerrainGen Bukkit Plugin [Terrain Control]'
 }
 
 static String gitVersion() {

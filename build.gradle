@@ -1,16 +1,13 @@
-plugins {
-    id 'net.ltgt.apt-eclipse' version('0.21')
-    id 'net.ltgt.apt-idea' version('0.21')
-}
-
 allprojects {
-
-    subprojects {
-        version('1.0.0-SNAPSHOT')
-    }
+    version = '1.0.0-SNAPSHOT'
 
     repositories {
         mavenCentral()
+        mavenLocal()
+        maven { url "https://hub.spigotmc.org/nexus/content/groups/public/" }
+        maven { url "https://libraries.minecraft.net/" }
+        flatDir {
+            dirs "${rootDir}/libs"
+        }
     }
-
 }

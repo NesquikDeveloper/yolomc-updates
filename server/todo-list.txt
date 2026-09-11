@@ -1,0 +1,4 @@
+Os modos como Skywars, Bedwars, Duels, PvP e HG continuarão funcionando tranquilamente.
+A diferença é que vou mudar esse padrão cru de WorldEdit do Yolo para algo melhor, utilizando esse terrain-generator. Também haverá mudanças nas tags de assinatura do Ultra+, seguindo algo parecido com o MushMC, gateway PIX e Mercado Pago, sistema de punição com menu, etc.
+
+# NÃO SEI SE VOU CONTINUAR COM ESSE PROJETO ASSIM, JÁ QUE PENSO EM ATUALIZÁ-LO. SOMENTE ISSO MESMO!
