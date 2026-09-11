@@ -53,7 +53,7 @@ public class Listeners implements Listener {
 
         GameScoreboard scoreboard = new GameScoreboard(player);
         scoreboard.updateTitle("§b§lAUTH");
-        scoreboard.updateLines("", "§fAguardando...", "", "§ewww.yolomc.com");
+        scoreboard.updateLines("", "§fAguardando...", "", "§ewww.ateumc.com");
 
         Bukkit.getOnlinePlayers().forEach(other -> {
             player.hidePlayer(other);

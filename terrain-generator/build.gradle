@@ -1,11 +1,11 @@
 plugins {
     id 'java'
-    id "com.github.johnrengelman.shadow" version "6.1.0"
-    id 'net.minecrell.plugin-yml.bukkit' version '0.3.0'
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+    id 'net.minecrell.plugin-yml.bukkit' version '0.6.0'
 }
 
 group 'com.minecraft.generator'
-version '1.0.0-SNAPSHOT'
+version '1.5.7-SNAPSHOT'
 
 compileJava.options.encoding = 'UTF-8'
 
@@ -16,8 +16,8 @@ repositories {
 
 dependencies {
 
-    compileOnly 'org.projectlombok:lombok:1.18.20'
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
     String dir = "C:\\Libraries\\"
 
@@ -32,9 +32,9 @@ jar {
 bukkit {
     name = 'Generator'
     main = 'com.minecraft.generator.Generator'
-    version = '1.0.0-' + gitVersion()
-    website = 'www.yolomc.com'
-    author = 'fress'
+    version = '1.5.7-' + gitVersion()
+    website = 'www.ateumc.com'
+    author = 'NesquikDeveloper'
     depend = ['TerrainControl']
     load = 'STARTUP'
     description = 'Terrain Generator bukkit plugin based on Open Terrain Generator'
@@ -42,4 +42,12 @@ bukkit {
 
 static String gitVersion() {
     return 'git rev-parse --verify --short HEAD'.execute().getText().trim()
+}
+
+def shadowJarTask = tasks.getByName("shadowJar")
+
+tasks.register("Ateu", Copy) {
+    dependsOn shadowJarTask
+    from shadowJarTask.outputs.files
+    into "/home/NesquikDeveloper/AteuMC/updater"
 }

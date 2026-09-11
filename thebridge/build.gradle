@@ -1,11 +1,11 @@
 plugins {
     id 'java'
-    id "com.github.johnrengelman.shadow" version "6.1.0"
-    id 'net.minecrell.plugin-yml.bukkit' version '0.3.0'
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+    id 'net.minecrell.plugin-yml.bukkit' version '0.6.0'
 }
 
 group 'com.minecraft.thebridge'
-version '1.0.0-SNAPSHOT'
+version '1.5.7-SNAPSHOT'
 
 compileJava.options.encoding = 'UTF-8'
 
@@ -33,13 +33,21 @@ jar {
 bukkit {
     name = 'Arcade'
     main = 'com.minecraft.thebridge.TheBridge'
-    version = '1.0.0-' + gitVersion()
-    website = 'www.yolomc.com'
+    version = '1.5.7-' + gitVersion()
+    website = 'www.ateumc.com'
     description = 'Arcade bukkit plugin based on core and core-bukkit.'
 }
 
 static String gitVersion() {
     return 'git rev-parse --verify --short HEAD'.execute().getText().trim()
+}
+
+def shadowJarTask = tasks.getByName("shadowJar")
+
+tasks.register("Ateu", Copy) {
+    dependsOn shadowJarTask
+    from shadowJarTask.outputs.files
+    into "/home/NesquikDeveloper/AteuMC/updater"
 }
 
 shadowJar {

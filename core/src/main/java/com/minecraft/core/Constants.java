@@ -1,8 +1,4 @@
-/*
- * Copyright (C) YoloMC, All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- */
+/* Porra de Copyright carai */
 
 package com.minecraft.core;
 
@@ -29,52 +25,24 @@ import java.util.concurrent.Executors;
 import java.util.regex.Pattern;
 
 public class Constants {
-
-    /**
-     * MySQL connection
-     */
     public static MySQL mySQL;
-
-    public static MySQL getMySQL() {
-        return mySQL;
-    }
-
-    public static void setMySQL(MySQL mySQL) {
-        Constants.mySQL = mySQL;
-    }
-
-    /**
-     * Redis connection
-     */
+    public static MySQL getMySQL() {return mySQL;}
+    public static void setMySQL(MySQL mySQL) {Constants.mySQL = mySQL;}
     public static Redis redis;
-
-    public static Redis getRedis() {
-        return redis;
-    }
-
-    public static void setRedis(Redis redis) {
-        Constants.redis = redis;
-    }
-
-    /**
-     * Asynchronous Thread
-     */
+    public static Redis getRedis() {return redis;}
+    public static void setRedis(Redis redis) {Constants.redis = redis;}
     public static final ExecutorService ASYNC = Executors.newCachedThreadPool(new ThreadFactoryBuilder().build());
 
-    /**
-     * Default Strings
-     */
-    public static final String SERVER_NAME = System.getProperty("server_name", "Yolo");
-    public static final String SERVER_WEBSITE = System.getProperty("server_website", "www.yolomc.com");
-    public static final String SERVER_DISCORD = System.getProperty("server_discord", "discord.gg/yolomc");
-    public static final String SERVER_STORE = System.getProperty("server_store", "loja.yolomc.com");
+    public static final String SERVER_NAME = System.getProperty("server_name", "Ateu");
+    public static final String SERVER_WEBSITE = System.getProperty("server_website", "www.ateumc.com");
+    public static final String SERVER_DISCORD = System.getProperty("server_discord", "discord.gg/ateumc");
+    public static final String SERVER_STORE = System.getProperty("server_store", "loja.ateumc.com");
+    public static final String SERVER_STORE = System.getProperty("server_play", "ateumc.com");
     public static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("###,###,###,###,###.##");
     public static final DecimalFormat SIMPLE_DECIMAL_FORMAT = create();
     public static final UUID CONSOLE_UUID = UUID.fromString("00000000-0000-0000-0000-000000000000");
+    public static final UUID DEVELOPER_ADMIN = UUID.fromString("6053260e-1e8e-4e9e-81d5-832e9f862533");
 
-    /**
-     * Default objects
-     */
     public static final Gson GSON = new Gson();
     public static final Random RANDOM = new Random();
     public static final JsonParser JSON_PARSER = new JsonParser();

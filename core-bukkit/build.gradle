@@ -1,10 +1,10 @@
 plugins {
     id 'java'
-    id "com.github.johnrengelman.shadow" version "6.1.0"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
 }
 
 group 'com.minecraft.core.bukkit'
-version '1.0.0-SNAPSHOT'
+version '1.5.7-SNAPSHOT'
 
 compileJava.options.encoding = 'UTF-8'
 
@@ -16,8 +16,8 @@ repositories {
 dependencies {
     compile project(':core')
 
-    compileOnly 'org.projectlombok:lombok:1.18.20'
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
     compile group: 'redis.clients', name: 'jedis', version: '2.9.0' // Redis
 
